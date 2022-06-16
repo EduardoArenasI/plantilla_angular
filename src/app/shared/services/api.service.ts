@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ListWCursor, FilterParams, SortOrder, Range, WhereIn, WhereContains } from './interfaces';
+import { ListWCursor, FilterParams, SortOrder, Range, WhereIn, WhereContains } from 'src/app/shared/interfaces';
 
 
 export abstract class ApiService<T> {
