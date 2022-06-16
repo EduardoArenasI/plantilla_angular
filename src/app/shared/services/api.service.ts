@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { from, Observable } from 'rxjs';
-import { ListWCursor, FilterParams, SortOrder, Range, WhereIn, WhereContains } from 'shared/interfaces';
-import { moment } from '';
+import { Observable } from 'rxjs';
+import { ListWCursor, FilterParams, SortOrder, Range, WhereIn, WhereContains } from './interfaces';
+
 
 export abstract class ApiService<T> {
 
@@ -23,11 +23,7 @@ export abstract class ApiService<T> {
    *  constructor(http: HttpClient) {
    *    super(http);
    *  }
-   *
-   *   public root(): string {
-   *     return 'users';
-   *   }
-   * }
+   *   v
    * ```
    */
   public abstract root(): string;
@@ -200,9 +196,9 @@ export function getParams<T>(params?: FilterParams<T>): HttpParams {
               value = `${i + field}^${start}~${end}`;
               break;
             case 'object': {
-              const $start = moment(start).format('YYYY-MM-DD');
-              const $end = moment(end).format('YYYY-MM-DD');
-              value = `${i + field}^${$start}~${$end}`;
+              //const $start = moment(start).format('YYYY-MM-DD');
+              // const $end = moment(end).format('YYYY-MM-DD');
+              //value = `${i + field}^${$start}~${$end}`;
               break;
             }
           }
@@ -212,3 +208,7 @@ export function getParams<T>(params?: FilterParams<T>): HttpParams {
     });
   return hp;
 }
+function moment(start: any) {
+  throw new Error('Function not implemented.');
+}
+
