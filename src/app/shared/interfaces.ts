@@ -7,10 +7,6 @@ export interface ListWCursor<T> {
 
 }
 export interface FilterParams<T> {
-    in: any;
-    contains: any;
-    key: string;
-
 
 }
 
