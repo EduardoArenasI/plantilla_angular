@@ -7,7 +7,7 @@ export interface ListWCursor<T> {
 
 }
 export interface FilterParams<T> {
-
+    
 }
 
 export interface SortOrder<T> {
