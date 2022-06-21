@@ -1,15 +1,13 @@
 
 export interface Model {
-    id: string;
+    
 }
 
 export interface ListWCursor<T> {
 
 }
 export interface FilterParams<T> {
-    contains: any;
-    in: any;
-    key : any;
+    
 }
 
 export interface SortOrder<T> {
