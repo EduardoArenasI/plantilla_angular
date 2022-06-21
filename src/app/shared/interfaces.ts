@@ -7,7 +7,9 @@ export interface ListWCursor<T> {
 
 }
 export interface FilterParams<T> {
-    
+    contains: any;
+    in: any;
+    key : any;
 }
 
 export interface SortOrder<T> {
@@ -32,6 +34,6 @@ export interface WhereIn<T> {
 export interface WhereContains<T> {
     values: any;
     field: any;
-
+    
 }
 
