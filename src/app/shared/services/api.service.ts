@@ -157,12 +157,12 @@ export function getParams<T>(params?: FilterParams<T>): HttpParams {
   let hp: HttpParams = new HttpParams();
 
   if ('in' in options) {
-    const wIn: WhereIn<T> = options['in'] as WhereIn<T>;
+    const wIn: WhereIn<T> = options['in'] as  as WhereIn<T>;
     delete options[wIn.field];
   }
 
   if ('contains' in options) {
-    const wContains: WhereContains<T> = options['contains'] as WhereContains<T>;
+    const wContains: WhereContains<T> = options['contains']  as WhereContains<T>;
     delete options[wContains.field];
   }
 
@@ -170,7 +170,7 @@ export function getParams<T>(params?: FilterParams<T>): HttpParams {
     .filter(key => !isNullEmptyOrZero(options[key]))
     .forEach(key => {
       let value = `${options[key]}`;
-      if (key as keyof FilterParams<T> === 'orderBy') {
+      if (key as keyof  FilterParams<T> === 'orderBy') {
         const orderBy: SortOrder<T> = options[key] as SortOrder<T>;
         const sign = orderBy.order === 'asc' ? '~' : '-';
         value = `${sign}${orderBy.field}`;
