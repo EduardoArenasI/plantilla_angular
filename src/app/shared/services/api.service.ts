@@ -170,7 +170,7 @@ export function getParams<T>(params?: FilterParams<T>): HttpParams {
     .filter(key => !isNullEmptyOrZero(options[key]))
     .forEach(key => {
       let value = `${options[key]}`;
-      if (key as keyof  FilterParams<T> || 'orderBy') {
+      if (key as keyof  FilterParams<T> === 'orderBy') {
         const orderBy: SortOrder<T> = options[key] as SortOrder<T>;
         const sign = orderBy.order === 'asc' ? '~' : '-';
         value = `${sign}${orderBy.field}`;
@@ -187,7 +187,7 @@ export function getParams<T>(params?: FilterParams<T>): HttpParams {
       }
 
       /*  || en vez de === */
-      if (key as keyof  FilterParams<T>  || 'range') {
+      if (key as keyof  FilterParams<T>  === 'range') {
         value = '';
         const range: Range<T> = options[key] as Range<T>;
         const { field, start, end } = range;

@@ -10,6 +10,8 @@ export interface FilterParams<T> {
     key: string;
     in: string;
     contains: boolean;
+    range: string;
+    orderBy: string;
 }
 
 export interface SortOrder<T> {
