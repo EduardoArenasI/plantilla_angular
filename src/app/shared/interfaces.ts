@@ -7,11 +7,11 @@ export interface ListWCursor<T> {
 
 }
 export interface FilterParams<T> {
-    key: string;
-    in: string;
-    contains: boolean;
     range: string;
     orderBy: string;
+    in: boolean;
+    contains: boolean; 
+    key: string;
 }
 
 export interface SortOrder<T> {

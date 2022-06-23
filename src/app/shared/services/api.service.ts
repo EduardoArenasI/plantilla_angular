@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import { ListWCursor, FilterParams, SortOrder, Range, WhereIn, WhereContains } from 'src/app/shared/interfaces';
 
 
@@ -157,12 +158,12 @@ export function getParams<T>(params?: FilterParams<T>): HttpParams {
   let hp: HttpParams = new HttpParams();
 
   if ('in' in options) {
-    const wIn: WhereIn<T> = options['in'] as unknown  as WhereIn<T>;
+    const wIn: WhereIn<T> = options['in']   as WhereIn<T>;
     delete options[wIn.field];
   }
 
   if ('contains' in options) {
-    const wContains: WhereContains<T> = options['contains'] as unknown  as WhereContains<T>;
+    const wContains: WhereContains<T> = options['contains']   as WhereContains<T>;
     delete options[wContains.field];
   }
 
